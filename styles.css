@@ -1,4 +1,7 @@
-body {
+/****************************************
+ * [1] 글로벌(공통) 스타일
+ ****************************************/
+ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     background-color: #f4f4f4;
@@ -6,6 +9,20 @@ body {
     padding: 0;
 }
 
+h1 {
+    color: #333;
+    margin: 0;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/****************************************
+ * [2] 헤더 컨테이너
+ ****************************************/
 .header-container {
     display: flex;
     align-items: center;
@@ -18,7 +35,9 @@ body {
     font-size: 1.6em;
 }
 
-/* 퀴즈 시작 화면 스타일 */
+/****************************************
+ * [3] 시작 화면 (start-container)
+ ****************************************/
 .start-container {
     background: white;
     max-width: 550px;
@@ -49,44 +68,47 @@ body {
     background-color: #238037;
 }
 
-/* 최종 결과 화면 버튼 스타일 */
-#finalScreen button {
-    padding: 10px 20px;
-    background-color: #17a2b8;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
+/****************************************
+ * [4] 유형 선택 화면
+ ****************************************/
+#typeSelectionScreen h1 {
+    margin-bottom: 20px; /* 제목 아래쪽에 20px 간격 */
 }
 
-#finalScreen button:hover {
-    background-color: #138496;
-}
-
-/* styles.css 예시 */
 #quizType {
-    width: 175px;        /* 원하는 너비 */
-    height: 35px;        /* 원하는 높이 */
-    font-size: 1em;      /* 글자 크기 */
-    padding: 5px;        /* 안쪽 여백 */
-    border-radius: 5px;  /* 모서리를 둥글게 */
+    /* 유형 선택 박스 크기 */
+    width: 175px;
+    height: 35px;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 5px;
+
+    /* 여백 */
+    margin-bottom: 10px; /* select 박스 아래쪽에 10px 간격 */
+    margin-right: 10px;  /* 오른쪽 간격 (버튼과의 간격) */
 }
 
-/* 퀴즈 화면 스타일 */
+.type-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;       /* select와 버튼 사이 간격 */
+    margin-top: 70px; /* 제목과 type-row 사이 간격 */
+}
+
+/****************************************
+ * [5] 퀴즈 화면 (quiz-container)
+ ****************************************/
 .quiz-container {
     background: white;
     max-width: 600px;
     max-height: 600px;
     margin: 70px auto;
     padding: 20px;
-    /* align-items: center;    자식들을 수평 중앙 정렬 */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    
 }
 
+/* 퀴즈 화면 내 이미지 */
 .quiz-image {
     width: 130px;
     height: 95px;
@@ -94,15 +116,7 @@ body {
     margin-bottom: 20px;
 }
 
-h1 {
-    color: #333;
-    margin: 0;
-}
-
-#userInput {
-    margin: 20px 0;
-}
-
+/* 문제(회색 박스) */
 .question-box {
     font-size: 1.2em;
     margin: 13px 0;
@@ -110,16 +124,21 @@ h1 {
     padding: 15px;
     background-color: #e6e6e6;
     border-radius: 5px;
-    /* margin-bottom: 25px; */
+    /* 아래는 주석 처리된 예시. 필요시 주석 해제
+       width: 300px;
+       min-height: 30px;
+       text-align: center;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    */
+}
 
-    /* 원하는 크기로 설정 (예시) */
-    /* width: 300px;         고정 너비 */
-    /* min-height: 30px;     최소 높이 */
-    /* text-align: center;   텍스트 가운데 정렬 */
-    /* display: flex;        세로축 중앙 정렬 위해 flex 사용 */
-    /* align-items: center;   */
-    /* justify-content: center; */
-
+/****************************************
+ * [6] 입력창, 버튼 공통 스타일
+ ****************************************/
+#userInput {
+    margin: 20px 0;
 }
 
 input {
@@ -131,6 +150,7 @@ input {
     font-size: 1em;
 }
 
+/* 공통 버튼 */
 button {
     padding: 10px 15px;
     border: none;
@@ -140,6 +160,7 @@ button {
     margin: 10px;
 }
 
+/* 제출 버튼 */
 #submit {
     background-color: #28a745;
     color: white;
@@ -149,23 +170,7 @@ button {
     background-color: #218838;
 }
 
-#typeSelectionScreen h1 {
-    margin-bottom: 20px; /* 제목 아래쪽에 20px 간격 */
-}
-  
-#quizType {
-    margin-bottom: 10px; /* select 박스 아래쪽에 10px 간격 (필요하다면 조절) */
-    margin-right: 10px;  /* 오른쪽 간격 (버튼과의 간격을 늘릴 수 있음) */
-}
-
-.type-row {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* select와 버튼 사이 간격 */
-    margin-top: 70px; /* 제목과 type-row 사이 간격 */
-}
-
-
+/* 중지 버튼 */
 .stop-btn {
     background-color: #dc3545;
     color: white;
@@ -175,6 +180,7 @@ button {
     background-color: #c82333;
 }
 
+/* 다음 문제 버튼 */
 .next-btn {
     background-color: #ffc107;
     color: black;
@@ -185,6 +191,7 @@ button {
     background-color: #e0a800;
 }
 
+/* 정답 확인 버튼 */
 .reveal-btn {
     background-color: #007bff;
     color: white;
@@ -195,12 +202,9 @@ button {
     background-color: #0056b3;
 }
 
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 1; }
-    100% { opacity: 1; }
-}
-
+/****************************************
+ * [7] 깜빡이는 효과(정답·오답 강조)
+ ****************************************/
 .blinking {
     animation: blink 3s infinite;
     color: rgb(187, 40, 146);
@@ -213,7 +217,9 @@ button {
     font-weight: bold;
 }
 
-/* 최종 결과 화면 스타일 */
+/****************************************
+ * [8] 최종 결과 화면 (finalScreen)
+ ****************************************/
 #finalScreen {
     background: white;
     max-width: 550px;
@@ -229,7 +235,24 @@ button {
     color: #333;
 }
 
-/* 결과 분석 표 스타일 */
+/* 최종 결과 화면 버튼 */
+#finalScreen button {
+    padding: 10px 20px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#finalScreen button:hover {
+    background-color: #138496;
+}
+
+/****************************************
+ * [9] 결과 분석 표 스타일
+ ****************************************/
 #analysisDetails {
     margin-top: 20px;
     overflow-x: auto;
