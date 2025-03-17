@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원소 퀴즈</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="header-container">
+            <img src="fig.jpg" alt="원소 퀴즈 이미지" class="quiz-image">
+            <h1>원소 퀴즈</h1>
+        </div>
+
+        <label for="quizType">퀴즈 유형 선택:</label>
+        <select id="quizType">
+            <option value="symbolToName">원소 기호 → 원소 이름</option>
+            <option value="nameToSymbol">원소 이름 → 원소 기호</option>
+        </select>
+
+        <div id="question" class="question-box"></div>
+        <input type="text" id="userInput" placeholder="정답 입력">
+        <button id="submit">제출</button>
+        <button id="reveal" class="reveal-btn" style="display:none;">정답 확인</button>
+        <button id="next" class="next-btn" style="display:none;">다음 문제</button>
+        <button id="stop" class="stop-btn">퀴즈 종료</button>
+        
+        <p id="result"></p>
+        <p id="scoreDisplay" class="score-box">점수: 0 | 정답 개수: 0 | 오답 개수: 0</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
