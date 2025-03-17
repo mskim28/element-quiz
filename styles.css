@@ -15,7 +15,7 @@ body {
 }
 
 .header-container h1 {
-    font-size: 1.7em;
+    font-size: 1.6em;
 }
 
 /* 퀴즈 시작 화면 스타일 */
@@ -64,19 +64,32 @@ body {
     background-color: #138496;
 }
 
+/* styles.css 예시 */
+#quizType {
+    width: 175px;        /* 원하는 너비 */
+    height: 35px;        /* 원하는 높이 */
+    font-size: 1em;      /* 글자 크기 */
+    padding: 5px;        /* 안쪽 여백 */
+    border-radius: 5px;  /* 모서리를 둥글게 */
+}
+
 /* 퀴즈 화면 스타일 */
 .quiz-container {
     background: white;
     max-width: 600px;
+    max-height: 600px;
     margin: 70px auto;
     padding: 20px;
+    /* align-items: center;    자식들을 수평 중앙 정렬 */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    
 }
 
 .quiz-image {
-    width: 125px;
-    height: 90px;
+    width: 130px;
+    height: 95px;
     margin-right: 5px;
     margin-bottom: 20px;
 }
@@ -86,13 +99,27 @@ h1 {
     margin: 0;
 }
 
+#userInput {
+    margin: 20px 0;
+}
+
 .question-box {
     font-size: 1.2em;
-    margin: 20px 0;
+    margin: 13px 0;
     font-weight: bold;
     padding: 15px;
     background-color: #e6e6e6;
     border-radius: 5px;
+    /* margin-bottom: 25px; */
+
+    /* 원하는 크기로 설정 (예시) */
+    /* width: 300px;         고정 너비 */
+    /* min-height: 30px;     최소 높이 */
+    /* text-align: center;   텍스트 가운데 정렬 */
+    /* display: flex;        세로축 중앙 정렬 위해 flex 사용 */
+    /* align-items: center;   */
+    /* justify-content: center; */
+
 }
 
 input {
@@ -121,6 +148,23 @@ button {
 #submit:hover {
     background-color: #218838;
 }
+
+#typeSelectionScreen h1 {
+    margin-bottom: 20px; /* 제목 아래쪽에 20px 간격 */
+}
+  
+#quizType {
+    margin-bottom: 10px; /* select 박스 아래쪽에 10px 간격 (필요하다면 조절) */
+    margin-right: 10px;  /* 오른쪽 간격 (버튼과의 간격을 늘릴 수 있음) */
+}
+
+.type-row {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* select와 버튼 사이 간격 */
+    margin-top: 70px; /* 제목과 type-row 사이 간격 */
+}
+
 
 .stop-btn {
     background-color: #dc3545;
