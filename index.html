@@ -41,9 +41,18 @@
         
         <p id="result"></p>
         <p id="scoreDisplay" class="score-box">점수: 0 | 정답 개수: 0 | 오답 개수: 0</p>
+        <!-- 진행률 표시 요소 -->
+        <p id="progressDisplay" class="progress-box">문제: 0/30 (남은 문제: 30)</p>
         <p id="highScoreDisplay" class="score-box" style="display:none;">최고 점수: 0</p>
+    </div>
 
-        <button id="restartQuiz" class="restart-btn" style="display:none;">다시 시작!</button>
+    <!-- 최종 결과 화면 (퀴즈 30문제 완료 시) -->
+    <div id="finalScreen" class="start-container" style="display:none;">
+        <h1>퀴즈가 끝났습니다</h1>
+        <p id="finalScore"></p>
+        <button id="analyzeBtn">결과 분석</button>
+        <div id="analysisDetails" style="display:none;"></div>
+        <button id="restartQuizFinal">퀴즈 다시 시작</button>
     </div>
 
     <script src="script.js"></script>
