@@ -7,17 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <div class="header-container">
-            <img src="fig.jpg" alt="원소 퀴즈 이미지" class="quiz-image">
-            <h1>원소 퀴즈</h1>
-        </div>
 
-        <label for="quizType">퀴즈 유형 선택:</label>
+    <!-- 퀴즈 시작 화면 -->
+    <div id="startScreen" class="start-container">
+        <img src="fig.jpg" alt="원소 퀴즈 이미지" class="quiz-image">
+        <h1>원소 퀴즈를 시작하시겠습니까?</h1>
+        <button id="startQuiz">퀴즈 시작!</button>
+    </div>
+
+    <!-- 퀴즈 유형 선택 화면 -->
+    <div id="typeSelectionScreen" class="start-container" style="display:none;">
+        <h1>퀴즈 유형을 선택해주세요!</h1>
         <select id="quizType">
             <option value="symbolToName">원소 기호 → 원소 이름</option>
             <option value="nameToSymbol">원소 이름 → 원소 기호</option>
+            <option value="mixed">원소 기호 ↔ 원소 이름</option>
         </select>
+        <button id="confirmType">선택 완료</button>
+    </div>
+
+    <!-- 퀴즈 화면 -->
+    <div id="quizScreen" class="quiz-container" style="display:none;">
+        <div class="header-container">
+            <h1>👩‍🏫 수정쌤과 함께하는 원소 퀴즈! ✨</h1>
+        </div>
 
         <div id="question" class="question-box"></div>
         <input type="text" id="userInput" placeholder="정답 입력">
@@ -28,6 +41,9 @@
         
         <p id="result"></p>
         <p id="scoreDisplay" class="score-box">점수: 0 | 정답 개수: 0 | 오답 개수: 0</p>
+        <p id="highScoreDisplay" class="score-box" style="display:none;">최고 점수: 0</p>
+
+        <button id="restartQuiz" class="restart-btn" style="display:none;">다시 시작!</button>
     </div>
 
     <script src="script.js"></script>
